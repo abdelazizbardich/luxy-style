@@ -4,6 +4,7 @@
     <HeroSlider />
     <Categories />
     <Cards />
+    <NewArrival />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Header from "@/components/header.vue";
 import HeroSlider from "@/components/hero-slider.vue";
 import Categories from "@/components/categories.vue";
 import Cards from "@/components/cards.vue";
+import NewArrival from "@/components/new-arrival.vue";
 export default {
   name: "Home",
   components: {
@@ -20,6 +22,7 @@ export default {
     HeroSlider,
     Categories,
     Cards,
+    NewArrival,
   },
 };
 </script>

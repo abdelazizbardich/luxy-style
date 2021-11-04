@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <span class="hero_title">Nos Categories</span>
+          <heroHeader title="Nos Categories" />
           <div class="categories_grid">
             <div class="category_item">
               <router-link to="#">
@@ -110,5 +110,10 @@
 }
 </style>
 <script>
-export default {};
+import heroHeader from "@/components/subcomponents/hero-title.vue";
+export default {
+  components: {
+    heroHeader,
+  },
+};
 </script>
