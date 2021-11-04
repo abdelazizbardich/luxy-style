@@ -6,6 +6,7 @@
     <Cards />
     <NewArrival />
     <TopSales />
+    <LatestedBlogs />
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import Categories from "@/components/categories.vue";
 import Cards from "@/components/cards.vue";
 import NewArrival from "@/components/new-arrival.vue";
 import TopSales from "@/components/top-sales.vue";
+import LatestedBlogs from "@/components/latested-blogs.vue";
 export default {
   name: "Home",
   components: {
@@ -26,6 +28,7 @@ export default {
     Cards,
     NewArrival,
     TopSales,
+    LatestedBlogs,
   },
 };
 </script>
