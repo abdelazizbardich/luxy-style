@@ -81,6 +81,8 @@
 <style lang="scss" scoped>
 .cards {
   background-color: #f7f8fa;
+  position: relative;
+  z-index: -1;
   .cards_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
