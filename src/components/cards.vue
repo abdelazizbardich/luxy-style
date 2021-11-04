@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="cards">
     <div class="container">
       <div class="row">
-        <div class="offset-1 py-5 col-10">
-          <div class="cards">
+        <div class="offset-1 py-5 my-5 col-10">
+          <div class="cards_grid">
             <div class="card_item">
               <div class="icon">
                 <i class="bi bi-geo-alt-fill"></i>
@@ -80,37 +80,67 @@
 </template>
 <style lang="scss" scoped>
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  .card_item {
-    padding: 16px 32px;
-    border: 5px solid #c1faf1;
-    margin: 8px;
-    display: flex;
-    align-items: center;
-    box-shadow: #41b8a652 0px 6px 8px;
-    .icon {
-      i {
-        color: #04ac92;
-        font-size: 32px;
-        margin-inline-end: 16px;
-      }
+  background-color: #f7f8fa;
+  .cards_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      background-image: url("~@/assets/cards-shape.svg");
+      background-position: center center;
+      background-size: contain;
+      height: 300px;
+      width: 300px;
+      border-radius: 300px;
+      left: 0%;
+      top: 50%;
+      transform: translate(-30%, -50%);
+      z-index: -1;
+      animation: cards_grid_before 35s infinite linear;
+      opacity: 0.7;
     }
-    .details {
-      .title {
-        color: #04ac92;
-        font-size: 16px;
-        text-transform: uppercase;
+    .card_item {
+      padding: 16px 32px;
+      border: 5px solid #c1faf1;
+      margin: 8px;
+      display: flex;
+      align-items: center;
+      box-shadow: #41b8a652 0px 6px 8px;
+      background-color: #ffffff;
+      .icon {
+        i {
+          color: #04ac92;
+          font-size: 32px;
+          margin-inline-end: 16px;
+        }
       }
-      .description {
-        font-size: 14px;
+      .details {
+        .title {
+          color: #04ac92;
+          font-size: 16px;
+          text-transform: uppercase;
+        }
+        .description {
+          font-size: 14px;
+        }
       }
     }
   }
 }
 @media screen and (max-width: 768px) {
-  .cards {
+  .cards_grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@keyframes cards_grid_before {
+  form {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 </style>
