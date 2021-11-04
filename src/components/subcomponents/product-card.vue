@@ -51,6 +51,7 @@
     img {
       width: 100%;
       height: auto;
+      border: 1px solid #51ffe4;
     }
   }
   .title {
