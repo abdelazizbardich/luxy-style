@@ -37,6 +37,7 @@
 </template>
 <style lang="scss" scoped>
 .categories {
+  background-color: #f7f8fa;
   min-height: 400px;
   position: relative;
   perspective: 500px;
