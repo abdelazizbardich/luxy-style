@@ -128,6 +128,12 @@
       padding: 8px 16px;
       border: 2px solid #04ac92;
       border-inline-start-width: 15px;
+      transition: 0.5s;
+      &:hover {
+        background-color: #04ac92;
+        border-color: #ffffff;
+        color: #ffffff;
+      }
     }
   }
   .slider_scroll_down {
@@ -171,12 +177,13 @@
     opacity: 0;
   }
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
   .hero_slider {
     .slider_title {
       font-size: 32px;
       text-align: start;
       margin-bottom: 16px;
+      text-shadow: #51ffe4 2px 4px 0px;
     }
     .slider_description {
       font-size: 14px;
@@ -189,8 +196,9 @@
       display: block;
     }
     .slider_action {
-      flex-direction: column;
-      margin: auto;
+      flex-direction: row-reverse;
+      margin-inline-start: initial;
+      margin-inline-end: auto;
     }
     .slider_category {
       margin-inline-end: auto;

@@ -17,7 +17,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase center-nav">
             <li class="nav-item">
               <router-link to="#" class="nav-link">Accueil</router-link>
             </li>
@@ -31,7 +31,7 @@
               <router-link to="#" class="nav-link">Contact</router-link>
             </li>
           </ul>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase end-nav">
             <li class="nav-item">
               <router-link to="#" class="nav-link">
                 <i class="bi bi-search"></i>
@@ -97,6 +97,12 @@ a.nav-link:hover {
     justify-content: center;
     align-items: center;
     font-size: 9px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .end-nav {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
 </style>
