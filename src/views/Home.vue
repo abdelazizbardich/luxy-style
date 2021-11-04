@@ -3,10 +3,12 @@
     <Header />
     <HeroSlider />
     <Categories />
-    <Cards />
     <NewArrival />
+    <Cards />
     <TopSales />
     <LatestedBlogs />
+    <InstagramFeed />
+    <Footer />
   </div>
 </template>
 
@@ -19,6 +21,8 @@ import Cards from "@/components/cards.vue";
 import NewArrival from "@/components/new-arrival.vue";
 import TopSales from "@/components/top-sales.vue";
 import LatestedBlogs from "@/components/latested-blogs.vue";
+import InstagramFeed from "@/components/instagram-feed.vue";
+import Footer from "@/components/footer.vue";
 export default {
   name: "Home",
   components: {
@@ -29,6 +33,8 @@ export default {
     NewArrival,
     TopSales,
     LatestedBlogs,
+    InstagramFeed,
+    Footer,
   },
 };
 </script>

@@ -48,6 +48,7 @@
     }
   }
   .thumbnail {
+    cursor: pointer;
     img {
       width: 100%;
       height: auto;
@@ -60,6 +61,7 @@
     font-size: 24px;
     text-align: center;
     margin-block: 16px;
+    cursor: pointer;
   }
   .actions {
     padding: 8px 16px;
@@ -72,6 +74,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: #51ffe4;
+      color: #444444;
+      box-shadow: #04ac92 4px 7px 0px;
+    }
     i {
       margin-inline-end: 8px;
       font-size: 24px;
