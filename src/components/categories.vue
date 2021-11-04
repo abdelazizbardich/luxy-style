@@ -100,6 +100,13 @@
     }
   }
 }
+@media screen and (max-width: 768px) {
+  .categories {
+    .categories_grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
 </style>
 <script>
 export default {};
