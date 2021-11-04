@@ -69,7 +69,7 @@
       text-align: center;
       padding: 8px;
       img {
-        border: 1px solid #04ac92;
+        border: 2px solid #c1faf1;
         background-color: #ffffff;
         border-radius: 16px;
         padding: 8px;
