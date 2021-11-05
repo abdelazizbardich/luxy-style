@@ -22,6 +22,14 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+@media screen and (max-width: 768px) {
+  .top_sales {
+    .top_sales_grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
 </style>
 <script>
 import heroHeader from "@/components/subcomponents/hero-title.vue";

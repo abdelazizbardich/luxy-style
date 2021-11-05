@@ -12,6 +12,7 @@
     </div>
     <div class="thumbnail">
       <img src="@/assets/product.png" alt="" />
+      <div class="category">T-SHIRTS</div>
     </div>
     <div class="title">
       <span>Flared Shift Dress</span>
@@ -49,10 +50,21 @@
   }
   .thumbnail {
     cursor: pointer;
+    position: relative;
     img {
       width: 100%;
       height: auto;
       border: 1px solid #51ffe4;
+    }
+    .category {
+      position: absolute;
+      inset-inline-end: 15px;
+      inset-block-end: 15px;
+      color: #04ac92;
+      font-size: 12px;
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
   .title {
@@ -83,6 +95,32 @@
     i {
       margin-inline-end: 8px;
       font-size: 24px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .product_card {
+    .header {
+      flex-direction: column;
+      .stars {
+        display: none;
+      }
+    }
+    .thumbnail {
+      .category {
+        inset-block-end: 5px;
+        inset-inline-end: 5px;
+      }
+    }
+    .title {
+      font-size: 12px;
+      margin-block-end: 4px;
+    }
+    .actions {
+      font-size: 10px;
+      i {
+        font-size: 10px;
+      }
     }
   }
 }

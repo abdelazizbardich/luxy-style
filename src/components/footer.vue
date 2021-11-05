@@ -73,11 +73,14 @@
                 <img src="@/assets/luxystyle-logo.svg" alt="logo" />
               </a>
             </div>
-            <div class="credit">© LuxyStyle 2020. Tous droits réservés</div>
+            <div class="credit">© 2021 Tous droits réservés</div>
           </div>
         </div>
       </div>
     </div>
+    <span v-if="scrollTop > 300" @click="scrollUp" class="back_to_top">
+      <i class="bi bi-arrow-up-short"></i>
+    </span>
   </footer>
 </template>
 <style lang="scss" scoped>
@@ -180,8 +183,91 @@ footer {
       }
     }
   }
+  .back_to_top {
+    z-index: 99;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    background: #ffffff;
+    display: flex;
+    position: fixed;
+    inset-inline-end: 5px;
+    inset-block-end: 5px;
+    margin: 0px;
+    bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    color: #04ac92;
+    font-size: 24px;
+    transform: translateX(-50%);
+    box-shadow: #49dbc557 0px 7px 12px;
+    transition: 0.5s;
+    cursor: pointer;
+    i {
+      animation: slider_scroll_down ease-in-out 2s infinite;
+      display: block;
+    }
+    &:hover {
+      box-shadow: #49dbc4 0px 12px 24px;
+      transform: translateX(-50%) scale(1.1);
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  footer {
+    .footer_top {
+      .footer_top_row {
+        flex-direction: column;
+        .newletter {
+          flex-direction: column;
+          form {
+            flex-direction: column;
+            align-items: center;
+            margin-inline: 0px;
+            margin-block-end: 32px;
+            input {
+              border-radius: 0px;
+              margin-block: 4px;
+            }
+            button {
+              border-radius: 0px;
+              margin-block: 4px;
+            }
+          }
+        }
+      }
+    }
+    .footer_bottom {
+      .footer_bottom_flex {
+        flex-direction: column;
+      }
+    }
+    .footer_middle {
+      background-size: cover;
+    }
+  }
 }
 </style>
 <script>
-export default {};
+export default {
+  data: () => {
+    return {
+      scrollTop: 0,
+    };
+  },
+  methods: {
+    scrollUp() {
+      window.scrollTo(0, 0);
+    },
+    onScroll() {
+      this.scrollTop = window.top.scrollY;
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
+  },
+};
 </script>

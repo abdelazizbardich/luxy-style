@@ -22,6 +22,15 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+@media screen and (max-width: 768px) {
+  .new_arrivals {
+    padding-block-end: 32px;
+    .new_arrivals_grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
 </style>
 <script>
 import heroHeader from "@/components/subcomponents/hero-title.vue";

@@ -1,3 +1,4 @@
+!
 <template>
   <div class="hero_title">
     <div v-if="title" class="title">{{ title }}</div>
@@ -6,6 +7,7 @@
 </template>
 <style lang="scss" scoped>
 .hero_title {
+  margin-block-end: 64px;
   .title {
     font-size: 32px;
     font-weight: bold;
@@ -24,6 +26,17 @@
     width: fit-content;
     margin-inline: auto;
     margin-block-end: 64px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero_title {
+    margin-block-end: 8px;
+    .title {
+      text-shadow: #51ffe4 2px 3px 0px;
+    }
+    .subtitle {
+      margin-block-end: 0px;
+    }
   }
 }
 </style>

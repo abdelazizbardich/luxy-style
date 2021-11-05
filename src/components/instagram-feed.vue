@@ -20,6 +20,15 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+@media screen and (max-width: 768px) {
+  .instargm_feed {
+    margin-block-end: 64px;
+    .instagram_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
 </style>
 <script>
 import heroHeader from "@/components/subcomponents/hero-title.vue";

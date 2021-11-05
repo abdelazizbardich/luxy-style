@@ -38,6 +38,24 @@
     }
   }
 }
+@media screen and (max-width: 768px) {
+  .instagram_post {
+    padding: 1px;
+    .thumbnail {
+      img {
+      }
+      &:hover {
+        .overlay {
+        }
+      }
+      .overlay {
+        i {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
 </style>
 <script>
 export default {};

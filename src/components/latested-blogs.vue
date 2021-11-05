@@ -23,6 +23,13 @@
     margin-block-end: 32px;
   }
 }
+@media screen and (max-width: 768px) {
+  .latested_blogs {
+    .latested_blogs_grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
 </style>
 <script>
 import BlogCard from "@/components/subcomponents/blog-card.vue";
