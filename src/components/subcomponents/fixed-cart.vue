@@ -29,7 +29,7 @@
 </template>
 <style lang="scss" scoped>
 .fixed_cart {
-  //   transform: translateX(100%);
+  transform: translateX(100%);
   background-color: #f7f8fa;
   width: 360px;
   max-width: 100%;
@@ -67,7 +67,7 @@
     }
   }
   .body {
-    height: 57vh;
+    height: 53vh;
     overflow-y: auto;
     padding-block: 16px;
   }

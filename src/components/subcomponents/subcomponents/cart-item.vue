@@ -10,7 +10,7 @@
           <span class="price"
             >{{ qte }} x {{ price }}DH
             <span class="counter">
-              <input v-model="qte" class="number" type="number" />
+              <input v-model="qte" disabled class="number" type="number" />
               <span>
                 <button @click="up" class="up">
                   <i class="bi bi-caret-up-fill"></i>
@@ -114,7 +114,7 @@
 export default {
   data: () => {
     return {
-      qte: 0,
+      qte: 1,
       price: 999.99,
     };
   },
@@ -123,7 +123,7 @@ export default {
       this.qte++;
     },
     down() {
-      this.qte--;
+      if (this.qte > 1) this.qte--;
     },
   },
 };
