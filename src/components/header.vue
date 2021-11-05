@@ -55,6 +55,7 @@
       </div>
     </nav>
     <FixedCart />
+    <OrderNotification />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -109,9 +110,11 @@ a.nav-link:hover {
 </style>
 <script>
 import FixedCart from "@/components/subcomponents/fixed-cart.vue";
+import OrderNotification from "@/components/subcomponents/order-notification.vue";
 export default {
   components: {
     FixedCart,
+    OrderNotification,
   },
 };
 </script>

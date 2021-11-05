@@ -1,8 +1,8 @@
 <template>
   <div class="cards">
     <div class="container">
-      <div class="row">
-        <div class="offset-md-1 py-3 py-md-5 my-5 my-md-5 col-md-10">
+      <div class="row justify-content-center">
+        <div class="py-3 py-md-5 my-5 my-md-5 col-md-10">
           <div class="cards_grid">
             <CardItem
               icon="bi bi-geo-alt-fill"
