@@ -3,14 +3,22 @@
     <router-link to="#">
       <img src="@/assets/category.png" alt="category image" />
     </router-link>
-    <span class="category_title">Nos Categories</span>
+    <span class="category_title">
+      <router-link to="#">Nos Categories</router-link>
+    </span>
   </div>
 </template>
 <style lang="scss" scoped>
 .category_item {
   text-align: center;
   padding: 8px;
+  &:hover {
+    img {
+      transform: translateY(-15px);
+    }
+  }
   img {
+    transition: 0.5s;
     border: 4px solid #c1faf1;
     background-color: #ffffff;
     border-radius: 16px;
@@ -28,6 +36,14 @@
     font-weight: bold;
     position: relative;
     margin-top: 25px;
+    a {
+      color: initial;
+      display: block;
+      transition: 0.3s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
     &::after {
       content: "";
       background-image: url("~@/assets/cat-shadow.svg");

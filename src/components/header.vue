@@ -54,6 +54,7 @@
         </div>
       </div>
     </nav>
+    <FixedCart />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -107,5 +108,10 @@ a.nav-link:hover {
 }
 </style>
 <script>
-export default {};
+import FixedCart from "@/components/subcomponents/fixed-cart.vue";
+export default {
+  components: {
+    FixedCart,
+  },
+};
 </script>
