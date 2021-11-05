@@ -11,6 +11,10 @@
       <div class="row body">
         <CartItem v-for="(i, index) in 7" :key="index" />
       </div>
+      <div class="row total_price">
+        <div class="col">Total</div>
+        <div class="col-auto">999.99DH</div>
+      </div>
       <div class="row footer">
         <div class="col-12"><hr /></div>
         <div class="col-12 view_cart">
@@ -66,6 +70,10 @@
     height: 57vh;
     overflow-y: auto;
     padding-block: 16px;
+  }
+  .total_price {
+    padding-block-start: 16px;
+    font-weight: bold;
   }
   .footer {
     hr {
