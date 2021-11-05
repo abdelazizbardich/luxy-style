@@ -13,7 +13,7 @@
         <span class="price">10999.99DH</span>
         <span class="date">il y a 1 minute</span>
       </span>
-      <div class="close"><i class="bi bi-x"></i></div>
+      <div @click="close" class="close"><i class="bi bi-x"></i></div>
     </div>
   </div>
 </template>
@@ -82,6 +82,16 @@ export default {
     return {
       show: false,
     };
+  },
+  mounted() {
+    var audio = new Audio(require("@/assets/sounds/order-notification.flac"));
+    audio.play();
+    this.show = true;
+  },
+  methods: {
+    close() {
+      this.show = false;
+    },
   },
 };
 </script>
