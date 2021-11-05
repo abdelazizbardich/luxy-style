@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed_cart">
+  <div class="fixed_cart" :style="!show ? 'transform: translateX(100%);' : ''">
     <div class="container">
       <div class="row header">
         <div class="col"><span class="title">Panier</span></div>
@@ -29,7 +29,6 @@
 </template>
 <style lang="scss" scoped>
 .fixed_cart {
-  transform: translateX(100%);
   background-color: #f7f8fa;
   width: 360px;
   max-width: 100%;
@@ -111,6 +110,11 @@
 <script>
 import CartItem from "@/components/subcomponents/subcomponents/cart-item.vue";
 export default {
+  data: () => {
+    return {
+      show: false,
+    };
+  },
   components: {
     CartItem,
   },
