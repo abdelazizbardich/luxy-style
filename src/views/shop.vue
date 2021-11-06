@@ -7,35 +7,31 @@
         <div class="col-12">
           <div class="filter">
             <form class="row m-0">
-              <div class="form-group m-0 col-2">
+              <div class="form-group m-0 col-md-2">
                 <label>Prix minimum(dh):</label>
                 <input type="text" value="0" class="form-control" />
               </div>
-              <div class="form-group m-0 col-2">
+              <div class="form-group m-0 col-md-2">
                 <label>Prix max(dh):</label>
                 <input type="text" value="1000" class="form-control" />
               </div>
-              <div class="form-group m-0 col">
+              <div class="form-group m-0 col-md">
                 <label>Categorie:</label>
                 <select class="form-control form-select">
                   <option value="" selected disabled>Categorie</option>
                   <option value="opt">Option</option>
                 </select>
               </div>
-              <div class="form-group m-0 col-4">
-                <label>Paggination:</label>
+              <div class="form-group m-0 col-md-auto">
+                <label>Numérotation des pages:</label>
                 <ul class="paggination">
                   <li class="prev"><i class="bi bi-arrow-left"></i></li>
                   <li class="page_number"><span>1</span></li>
                   <li class="page_number"><span>2</span></li>
                   <li class="page_number"><span>3</span></li>
-                  <li class="page_number"><span>4</span></li>
+                  <li class="page_number active"><span>4</span></li>
                   <li class="page_number"><span>5</span></li>
-                  <li class="page_number active"><span>6</span></li>
-                  <li class="page_number"><span>7</span></li>
-                  <li class="page_number"><span>8</span></li>
-                  <li class="page_number"><span>9</span></li>
-                  <li class="page_number"><span>10</span></li>
+                  <li class="page_number"><span>6</span></li>
                   <li class="next"><i class="bi bi-arrow-right"></i></li>
                 </ul>
               </div>
@@ -70,6 +66,11 @@
         margin: 0px;
         padding: 0px;
         li {
+          transition: 0.3s;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.1);
+          }
           &.active {
             span {
               width: 25px;

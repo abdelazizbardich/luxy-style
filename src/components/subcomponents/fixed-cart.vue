@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed_cart" :style="!show ? 'transform: translateX(100%);' : ''">
+  <div class="fixed_cart" :style="!show ? 'transform: translateX(150%);' : ''">
     <div class="container">
       <div class="row header">
         <div class="col"><span class="title">Panier</span></div>
