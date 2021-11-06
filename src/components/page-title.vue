@@ -18,7 +18,6 @@
   .page_title {
     font-size: 32px;
     height: 70px;
-    background-color: red;
   }
 }
 </style>

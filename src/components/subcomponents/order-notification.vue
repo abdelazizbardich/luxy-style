@@ -83,12 +83,12 @@ export default {
       show: false,
     };
   },
-  mounted() {
-    var audio = new Audio(require("@/assets/sounds/order-notification.flac"));
-    audio.play();
-    this.show = true;
-  },
   methods: {
+    showNotification() {
+      var audio = new Audio(require("@/assets/sounds/order-notification.flac"));
+      audio.play();
+      this.show = true;
+    },
     close() {
       this.show = false;
     },

@@ -1,11 +1,9 @@
 <template>
   <div class="shop_grid">
-    <div class="container-md">
-      <div class="row">
-        <div class="col-12">
-          <div class="shop_grid_grid">
-            <productCard v-for="(i, index) in 32" :key="index" />
-          </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="shop_grid_grid">
+          <productCard v-for="(i, index) in 32" :key="index" />
         </div>
       </div>
     </div>
