@@ -19,16 +19,20 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase center-nav">
             <li class="nav-item">
-              <router-link to="#" class="nav-link">Accueil</router-link>
+              <router-link to="/" class="nav-link">Accueil</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="#" class="nav-link">Boutique</router-link>
+              <router-link to="/boutique" class="nav-link"
+                >Boutique</router-link
+              >
             </li>
             <li class="nav-item">
-              <router-link to="#" class="nav-link">à proppos</router-link>
+              <router-link to="/a-proppos" class="nav-link"
+                >à proppos</router-link
+              >
             </li>
             <li class="nav-item">
-              <router-link to="#" class="nav-link">Contact</router-link>
+              <router-link to="/contact" class="nav-link">Contact</router-link>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase end-nav">
@@ -46,7 +50,7 @@
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="#" class="nav-link">
+              <router-link to="/Suivi-de-commande" class="nav-link">
                 <i class="bi bi-truck"></i>
               </router-link>
             </li>
@@ -70,10 +74,14 @@
 }
 a.nav-link {
   transition: 0.3s;
-}
-a.nav-link:hover {
-  text-shadow: #51ffe4 2px 2px 0px;
-  transform: translateY(-2px);
+  &:hover {
+    text-shadow: #51ffe4 2px 2px 0px;
+    transform: translateY(-2px);
+  }
+  &.router-link-exact-active {
+    text-shadow: #51ffe4 2px 2px 0px;
+    transform: translateY(-2px);
+  }
 }
 .navbar-nav {
   font-size: 16px;
@@ -112,6 +120,11 @@ a.nav-link:hover {
 import FixedCart from "@/components/subcomponents/fixed-cart.vue";
 import OrderNotification from "@/components/subcomponents/order-notification.vue";
 export default {
+  data: () => {
+    return {
+      active: "home",
+    };
+  },
   components: {
     FixedCart,
     OrderNotification,
