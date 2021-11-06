@@ -14,6 +14,13 @@
   align-items: center;
   font-weight: bold;
 }
+@media screen and (max-width: 768px) {
+  .page_title {
+    font-size: 32px;
+    height: 70px;
+    background-color: red;
+  }
+}
 </style>
 <script>
 export default {
