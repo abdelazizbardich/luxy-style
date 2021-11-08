@@ -1,7 +1,7 @@
 <template>
   <div class="product">
     <Header />
-    <PageTitle :title="'Produit'" />
+    <PageTitle class="page_title" :title="'Produit'" />
     <div class="container presentation">
       <div class="row">
         <div class="col-md-6">
@@ -11,23 +11,43 @@
             <span>Product name</span>
           </div>
           <div class="thumbnail">
-            <img src="@/assets/product-img.png" alt="product thumbnail" />
+            <img :src="activeSlide.path" :alt="activeSlide.title" />
           </div>
           <div class="gallery">
             <div class="gallery_item">
-              <img src="@/assets/product-img.png" alt="products gallery" />
+              <img
+                @click="setActiveSlide(1)"
+                src="@/assets/gallery-1.png"
+                alt="products gallery"
+              />
             </div>
             <div class="gallery_item">
-              <img src="@/assets/product-img.png" alt="products gallery" />
+              <img
+                @click="setActiveSlide(2)"
+                src="@/assets/gallery-2.png"
+                alt="products gallery"
+              />
             </div>
             <div class="gallery_item">
-              <img src="@/assets/product-img.png" alt="products gallery" />
+              <img
+                @click="setActiveSlide(3)"
+                src="@/assets/gallery-3.png"
+                alt="products gallery"
+              />
             </div>
             <div class="gallery_item">
-              <img src="@/assets/product-img.png" alt="products gallery" />
+              <img
+                @click="setActiveSlide(4)"
+                src="@/assets/gallery-4.png"
+                alt="products gallery"
+              />
             </div>
             <div class="gallery_item">
-              <img src="@/assets/product-img.png" alt="products gallery" />
+              <img
+                @click="setActiveSlide(5)"
+                src="@/assets/gallery-5.png"
+                alt="products gallery"
+              />
             </div>
           </div>
         </div>
@@ -85,7 +105,7 @@
             <div class="add_to_cart">Ajouter au panier</div>
           </div>
           <div class="share">
-            <span class="icon"><i class="bi bi-share"></i></span>
+            <span class="icon"><i class="bi bi-share-fill"></i></span>
             <a href="#"><i class="bi bi-facebook"></i></a>
             <a href="#"><i class="bi bi-twitter"></i></a>
             <a href="#"><i class="bi bi-instagram"></i></a>
@@ -295,9 +315,16 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      flex-wrap: wrap;
       .gallery_item {
         height: 70px;
+        width: 70px;
         margin-inline-end: 4px;
+        cursor: pointer;
+        transition: 0.1s;
+        &:hover {
+          box-shadow: #04ac9357 0px 3px 3px;
+        }
         img {
           width: 100%;
           height: 100%;
@@ -310,7 +337,7 @@
       color: #04ac92;
       font-weight: bold;
     }
-    infos {
+    .infos {
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -456,7 +483,7 @@
       margin-inline-start: auto;
       margin-block: 32px;
       color: #ff6f00;
-      icon {
+      .icon {
         background-color: #04ac92;
         width: 30px;
         height: 30px;
@@ -699,6 +726,111 @@
     }
   }
 }
+@media screen and (max-width: 798px) {
+  .product {
+    .page_title {
+      display: none;
+    }
+    .presentation {
+      .path {
+        font-size: 10px;
+        a {
+          font-size: 10px;
+        }
+      }
+      .title {
+        font-size: 24px;
+      }
+      .description {
+        p {
+          font-size: 14px;
+        }
+      }
+      .infos {
+        flex-wrap: wrap;
+        .stars {
+          margin-block: 8px;
+          width: 100%;
+          i {
+            font-size: 24px;
+          }
+        }
+      }
+      .stock {
+        .title {
+          font-size: 16px;
+        }
+        .progress {
+          height: 14px;
+          .progress-bar {
+            height: 14px;
+          }
+        }
+      }
+      .actions {
+        flex-direction: column;
+        .add_to_cart {
+          font-size: 14px;
+          width: 100%;
+        }
+        .order_now {
+          font-size: 14px;
+          width: 100%;
+        }
+      }
+      .share {
+        width: 100%;
+        height: 50px;
+        .icon {
+          height: 55px;
+          width: 55px;
+          font-size: 20px;
+        }
+        a {
+          i {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .reviews {
+      text-align: center;
+      .review {
+        .stars {
+          justify-content: center;
+          i {
+            margin-inline-end: 4px;
+          }
+        }
+      }
+    }
+    .add_comment {
+      .form {
+        padding: 8px;
+        .form-group {
+          textarea {
+            height: 150px;
+          }
+          .stars {
+            i {
+              font-size: 35px;
+              margin-inline: 6px;
+            }
+          }
+        }
+      }
+    }
+    .form_same_category {
+      .title {
+        font-size: 24px;
+        text-align: center;
+      }
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
 </style>
 <script>
 import Header from "@/components/header.vue";
@@ -709,6 +841,10 @@ export default {
   data: () => {
     return {
       qte: 1,
+      activeSlide: {
+        title: "ptoduct thumbnail",
+        path: require("@/assets/product-img.png"),
+      },
     };
   },
   components: {
@@ -717,7 +853,11 @@ export default {
     productCard,
     Footer,
   },
+  created() {},
   methods: {
+    setActiveSlide(slide) {
+      this.activeSlide.path = require("@/assets/gallery-" + slide + ".png");
+    },
     up() {
       this.qte++;
     },

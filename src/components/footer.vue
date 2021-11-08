@@ -245,6 +245,9 @@ footer {
     .footer_middle {
       background-size: cover;
     }
+    .back_to_top {
+      display: none;
+    }
   }
 }
 </style>
