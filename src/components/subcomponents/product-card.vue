@@ -24,9 +24,11 @@
       </router-link>
     </div>
     <div class="actions">
-      <span @click="addToCart()" class="add-to-cart">
-        <i class="bi bi-cart-plus-fill"></i>Ajouter au panier
-      </span>
+      <router-link to="#"
+        ><span class="add-to-cart">
+          <i class="bi bi-cart-plus-fill"></i>Acheter maintenant
+        </span></router-link
+      >
     </div>
   </div>
 </template>
@@ -88,18 +90,21 @@
     padding: 8px 16px;
     width: 100%;
     font-size: 20px;
-    color: #ffffff;
+    color: #000000;
     text-transform: uppercase;
     text-align: center;
-    background-color: #04ac92;
+    background-color: #ffe600;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    a {
+      color: unset;
+    }
     &:hover {
-      background-color: #51ffe4;
-      color: #444444;
-      box-shadow: #04ac92 4px 7px 0px;
+      background-color: #ffe600;
+      color: #000000;
+      box-shadow: #ceb902 4px 7px 0px;
     }
     i {
       margin-inline-end: 8px;

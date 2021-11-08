@@ -102,7 +102,7 @@
           </div>
           <div class="actions">
             <div class="order_now">Acheter maintenant</div>
-            <div class="add_to_cart">Ajouter au panier</div>
+            <!-- <div class="add_to_cart">Ajouter au panier</div> -->
           </div>
           <div class="share">
             <span class="icon"><i class="bi bi-share-fill"></i></span>

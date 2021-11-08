@@ -19,20 +19,24 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase center-nav">
             <li class="nav-item">
-              <router-link to="/" class="nav-link">Accueil</router-link>
+              <router-link :to="{ name: 'home' }" class="nav-link"
+                >Accueil</router-link
+              >
             </li>
             <li class="nav-item">
-              <router-link to="/boutique" class="nav-link"
+              <router-link :to="{ name: 'shop' }" class="nav-link"
                 >Boutique</router-link
               >
             </li>
             <li class="nav-item">
-              <router-link to="/a-proppos" class="nav-link"
+              <router-link :to="{ name: 'about' }" class="nav-link"
                 >à proppos</router-link
               >
             </li>
             <li class="nav-item">
-              <router-link to="/contact" class="nav-link">Contact</router-link>
+              <router-link :to="{ name: 'contact' }" class="nav-link"
+                >Contact</router-link
+              >
             </li>
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase end-nav">
@@ -41,7 +45,7 @@
                 <i class="bi bi-search"></i>
               </router-link>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a
                 style="cursor: pointer"
                 @click="showFixedCart"
@@ -52,7 +56,7 @@
                   <span class="cart-count">0</span>
                 </span>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <router-link to="/Suivi-de-commande" class="nav-link">
                 <i class="bi bi-truck"></i>
