@@ -11,14 +11,20 @@
       </span>
     </div>
     <div class="thumbnail">
-      <img src="@/assets/product.png" alt="" />
-      <div class="category">T-SHIRTS</div>
+      <router-link to="/produit/1">
+        <img src="@/assets/product.png" alt="" />
+      </router-link>
+      <router-link to="/categorie">
+        <div class="category">T-SHIRTS</div>
+      </router-link>
     </div>
     <div class="title">
-      <span>Flared Shift Dress</span>
+      <router-link to="/produit/1">
+        <span>Flared Shift Dress</span>
+      </router-link>
     </div>
     <div class="actions">
-      <span class="add-to-cart">
+      <span @click="addToCart()" class="add-to-cart">
         <i class="bi bi-cart-plus-fill"></i>Ajouter au panier
       </span>
     </div>
@@ -74,6 +80,9 @@
     text-align: center;
     margin-block: 16px;
     cursor: pointer;
+    a {
+      color: initial;
+    }
   }
   .actions {
     padding: 8px 16px;
@@ -126,5 +135,11 @@
 }
 </style>
 <script>
-export default {};
+export default {
+  methods: {
+    addToCart() {
+      alert("added to cart");
+    },
+  },
+};
 </script>
