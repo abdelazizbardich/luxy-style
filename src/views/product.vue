@@ -101,7 +101,9 @@
             </div>
           </div>
           <div class="actions">
-            <div class="order_now">Acheter maintenant</div>
+            <router-link :to="{ name: 'dirctCheckout' }">
+              <div class="order_now">Acheter maintenant</div>
+            </router-link>
             <!-- <div class="add_to_cart">Ajouter au panier</div> -->
           </div>
           <div class="share">
@@ -442,8 +444,13 @@
       align-items: center;
       justify-content: space-between;
       margin-block-start: 16px;
+      a {
+        display: block;
+        color: unset;
+        width: 100%;
+      }
       .order_now {
-        width: 45%;
+        width: 100%;
         height: 50px;
         background-color: #ffe600;
         display: flex;
