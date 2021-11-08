@@ -42,12 +42,16 @@
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="#" class="nav-link">
+              <a
+                style="cursor: pointer"
+                @click="showFixedCart"
+                class="nav-link"
+              >
                 <span class="cart-icon">
                   <i class="bi bi-bag"></i>
                   <span class="cart-count">0</span>
                 </span>
-              </router-link>
+              </a>
             </li>
             <li class="nav-item">
               <router-link to="/Suivi-de-commande" class="nav-link">
@@ -120,14 +124,16 @@ a.nav-link {
 import FixedCart from "@/components/subcomponents/fixed-cart.vue";
 import OrderNotification from "@/components/subcomponents/order-notification.vue";
 export default {
-  data: () => {
-    return {
-      active: "home",
-    };
-  },
   components: {
     FixedCart,
     OrderNotification,
+  },
+  methods: {
+    showFixedCart() {
+      this.$store.state.showFixedCart
+        ? (this.$store.state.showFixedCart = false)
+        : (this.$store.state.showFixedCart = true);
+    },
   },
 };
 </script>

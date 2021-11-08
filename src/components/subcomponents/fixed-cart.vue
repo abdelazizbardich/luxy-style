@@ -1,10 +1,15 @@
 <template>
-  <div class="fixed_cart" :style="!show ? 'transform: translateX(150%);' : ''">
+  <div
+    class="fixed_cart"
+    :style="!$store.state.showFixedCart ? 'transform: translateX(150%);' : ''"
+  >
     <div class="container">
       <div class="row header">
         <div class="col"><span class="title">Panier</span></div>
         <div class="col-auto">
-          <span class="close"><i class="bi bi-x-circle-fill"></i></span>
+          <span @click="hideFixedCart" class="close"
+            ><i class="bi bi-x-circle-fill"></i
+          ></span>
         </div>
         <div class="col-12"><hr /></div>
       </div>
@@ -37,7 +42,7 @@
   inset-inline-end: 0px;
   inset-block-end: 0px;
   inset-block-start: 60px;
-  z-index: -1;
+  z-index: 99;
   box-shadow: #2ead9a62 -16px 0px 32px;
   display: flex;
   align-items: center;
@@ -110,13 +115,13 @@
 <script>
 import CartItem from "@/components/subcomponents/subcomponents/cart-item.vue";
 export default {
-  data: () => {
-    return {
-      show: false,
-    };
-  },
   components: {
     CartItem,
+  },
+  methods: {
+    hideFixedCart() {
+      this.$store.state.showFixedCart = false;
+    },
   },
 };
 </script>
